@@ -1,5 +1,5 @@
 # Welcome
-Rxx is a library of unofficial reactive LINQ extensions and types supplementary to [Microsoft's Reactive Extensions (Rx) for .NET](https://github.com/Reactive-Extensions/Rx.NET).
+Rxx is a library of unofficial reactive LINQ extensions and types supplementary to [Reactive Extensions (Rx) for .NET](https://github.com/Reactive-Extensions/Rx.NET).
 
 # Goals
 1. The Rxx project is designed to provide LINQ extensions and types that we (the contributors) believe are useful in real-world applications and are not currently present in the Microsoft Reactive Extensions for .NET (Rx) libraries.
