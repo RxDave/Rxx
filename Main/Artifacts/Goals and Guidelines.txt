@@ -1,0 +1,115 @@
+Goals and Guidelines for Rxx
+http://rxx.codeplex.com/
+
+	Date				Author				Changes
+	4/2/2011		Dave S.				First draft
+	6/23/2011		Dave S.				Updated for Rxx 1.1.
+
+
+Mission Statement: 
+
+	Rxx provides LINQ extensions that are supplementary to Microsoft's Reactive Extensions for .NET (Rx).
+
+
+Project Management and Design Goals: 
+
+	1. Use CodePlex for coordination, issue tracking, discussions, development, TFS source control, documentation and delivery.
+		a. Also use NuGet as another delivery channel.
+	2. All content licensed under the Microsoft Public License (Ms-PL).
+	3. Produce a solid, simple and single deliverable class library for download.
+
+		Simple and single deliverable class library =
+
+		a. A wide variety of APIs and extensions that solve specific, real-world problems using LINQ.
+			I. Target the latest official RTM of the .NET Framework, Silverlight and Windows Phone; currently, .NET 4.0, SL4 and WP7, respectively.
+			II. All code will be written in C# using Visual Studio 2010.
+		b. Focus on the Rx and Ix spaces only, with Rx as the priority.
+		c. Do not include any one-offs, out-of-band or targeted APIs; e.g., a reactive service wrapper for the Twitter streaming API does not 
+			 belong in this project.
+		d. Do not include any tools, installers, executables, build scripts, Visual Studio extensions, T4 templates, etc.
+		e. Additional projects for unit tests and/or hands-on labs are acceptable as long as they are focused on the APIs being delivered.
+
+		Solid =
+
+		f. Deliver completed APIs only (binary download).
+			I. Incomplete source code check-ins are acceptable if clearly commented as being incomplete/untested and indicating what’s missing.
+		g. Deliver tested APIs only (binary download).
+			I. Test by writing specialized labs, keeping end-users in mind.  Labs should illustrate real-world usage while exercising the API.
+			II. Unit test when necessary based on the volatility or complexity of the API under development.  (Developer’s discretion.)
+		h. Standardized: 
+			I. Follow the Rx Design Guidelines.
+					http://go.microsoft.com/fwlink/?LinkID=205219
+			II. Follow the Microsoft Design Guidelines for Developing Class Libraries.
+					http://msdn.microsoft.com/en-us/library/ms229042.aspx
+		i. Write reference documentation – Complete XML comments for IntelliSense.
+		j. Write conceptual documentation – CodePlex Documentation tab.  At least include a general API taxonomy with a summary for each logical API.
+			I. As time permits:  Detail each API’s design goals and common usage scenarios.  Include code examples.
+	4. Perform unconditional source code check-ins on a need-by-need basis.
+		a. Code review is recommended, but optional.
+	5. Democratically agree upon deliverable content and dates.
+	6. Democratically consider additional coordinators and contributors on a per-request basis.
+
+
+Design Guidelines:
+
+	1. Rx Design Guidelines
+		 http://go.microsoft.com/fwlink/?LinkID=205219
+	2. Microsoft Design Guidelines for Developing Class Libraries
+		 http://msdn.microsoft.com/en-us/library/ms229042.aspx
+
+
+Coding Styles and Tools:
+
+	1. Use Code Contracts instead of the classic if-then-throw style parameter validation.
+		 http://msdn.microsoft.com/en-us/devlabs/dd491992
+	2. Use Code Analysis in Visual Studio (or FxCop) and tweak the rule-set for use with Code Contracts.
+		 http://msdn.microsoft.com/en-us/library/3z0aeatx.aspx
+	3. Use StyleCop and tweak the rule-set for use with Code Contracts and Rxx team preferences.
+		 http://stylecop.codeplex.com/
+	4. Use IntelliSense Code Snippets to organize code files and to quickly author common code blocks.
+		 See the Build\Snippets\_Read Me.txt file in this solution for more information.
+
+	** Fix or suppress all warnings before distributing new versions of Rxx for public consumption.
+
+
+Multi-targeting: 
+
+	Rxx targets the .NET Framework 4.5, Silverlight 5 and WP7.1 as three different Rxx.dll files built by separate, aptly-named class library projects.
+
+	It is each developer's responsibility to maintain parity between the libraries whenever possible by adding links to source code files from the 
+	main Rxx project that targets .NET 4.5 to the other projects that target Silverlight and Windows Phone.
+
+	To add new source code files to Rxx: 
+
+	1.	Add a new source code file as normal to the main Rxx project that targets the .NET Framework 4.5.
+	2.	Recreate the identical folder structure in the Rxx-Silverlight 5 and Rxx-Phone 7.1 projects.
+	3.	Add a link to the source code file from the main Rxx project to the Rxx-Silverlight and Rxx-Phone projects.
+			a. How to: Add Existing Items to a Project, Adding an Existing Item as a Link
+				 http://msdn.microsoft.com/en-us/library/9f4t9t92(v=VS.100).aspx
+	4.	Build the solution normally.
+	5.	Fix any warnings and errors in the Rxx-Silverlight and Rxx-Phone projects.
+			a. In some cases the BCL for Silverlight or Phone simply does not support the APIs that your new source code file requires.  In these cases 
+				 you can simply delete the file link from the target projects to exclude this functionality from the Silverlight or Phone builds.
+			b. Alternatively, for source code files that contain some linkable code or features that require only slight modifications to work for any
+				 or some of the targets, you can add conditional compilation to the source code file.  Use the SILVERLIGHT and/or WINDOWS_PHONE symbols to 
+				 filter specific code that should not appear in either the main project or the linked projects.  Note that the Windows Phone project 
+				 defines both symbols, the Silverlight project only defines the SILVERLIGHT symbol and the full .NET Framework project defines neither.
+
+	** Make sure that you track which code has and has not been linked by adding notes to this file: 
+
+		 Deployment\Features.txt
+
+
+Documentation (.chm):
+
+	1. Sandcastle Installer
+		 http://shfb.codeplex.com/
+
+		 Note: White Tie is used to automate building documentation via SHFB.
+
+
+Testing Procedures:
+
+	1. Use the DaveSexton.Labs infrastructure project to create new hands-on labs and test APIs as they are being developed.
+	2. Write Unit Tests when appropriate.
+		 http://msdn.microsoft.com/en-us/library/dd264975.aspx

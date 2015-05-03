@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props" Condition="Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1656FD72-2C59-4A44-BF12-BAB87F4DF1F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rxx.Parsers</RootNamespace>
+    <AssemblyName>Rxx.Parsers</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile44</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>0bc5df8a</NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PORT_45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Rxx.Parsers.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>False</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>2</CodeContractsAnalysisWarningLevel>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsSQLServerOption />
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PORT_45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Rxx.Parsers.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>True</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>True</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>2</CodeContractsAnalysisWarningLevel>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsSQLServerOption />
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Build\Properties\Rxx2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Profiling|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Profiling\</OutputPath>
+    <DefineConstants>TRACE;PORT_45;PROFILING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsSQLServerOption />
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Analysis|AnyCPU'">
+    <OutputPath>bin\Analysis\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE;PORT_45</DefineConstants>
+    <DocumentationFile>bin\Release\Rxx.Parsers.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <CodeAnalysisDictionary Include="..\..\Build\Properties\CodeAnalysisDictionary.xml">
+      <Link>Properties\CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Build\Properties\AssemblyInfoShared.cs">
+      <Link>Properties\AssemblyInfoShared.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\Collections\Generic\ListExtensions.cs">
+      <Link>System\Collections\Generic\ListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AllManyParser.cs">
+      <Link>AllManyParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AllManyUnorderedParser.cs">
+      <Link>AllManyUnorderedParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AllParser.cs">
+      <Link>AllParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AllUnorderedParser.cs">
+      <Link>AllUnorderedParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AmbiguousParser.cs">
+      <Link>AmbiguousParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AnonymousParser.cs">
+      <Link>AnonymousParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\AnyParser.cs">
+      <Link>AnyParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\BinaryParser.cs">
+      <Link>BinaryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\BinaryParserQueryContext.cs">
+      <Link>BinaryParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\DeferredParserCursor.cs">
+      <Link>DeferredParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IBinaryParser.cs">
+      <Link>IBinaryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ILookAheadParseResult.cs">
+      <Link>ILookAheadParseResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\InlineBinaryParser.cs">
+      <Link>InlineBinaryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\InlineParser.cs">
+      <Link>InlineParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\InlineStringParser.cs">
+      <Link>InlineStringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\InlineXmlParser.cs">
+      <Link>InlineXmlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IParser.cs">
+      <Link>IParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IParserCursor.cs">
+      <Link>IParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IParserCursorState.cs">
+      <Link>IParserCursorState.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IParseResult.cs">
+      <Link>IParseResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IStringParser.cs">
+      <Link>IStringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\IXmlParser.cs">
+      <Link>IXmlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Aggregation.cs">
+      <Link>Linq\Aggregation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Ambiguity and Greediness.cs">
+      <Link>Linq\Ambiguity and Greediness.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Construction.cs">
+      <Link>Linq\Construction.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Conversion.cs">
+      <Link>Linq\Conversion.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Create.cs">
+      <Link>Linq\Create.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Errors.cs">
+      <Link>Linq\Errors.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Filter.cs">
+      <Link>Linq\Filter.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Group.cs">
+      <Link>Linq\Group.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Logic.cs">
+      <Link>Linq\Logic.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Parse.cs">
+      <Link>Linq\Parse.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Projection.cs">
+      <Link>Linq\Projection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Quantification.cs">
+      <Link>Linq\Quantification.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Side-Effects.cs">
+      <Link>Linq\Side-Effects.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\linq\Success and Failure.cs">
+      <Link>Linq\Success and Failure.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\LookAheadParseResult.cs">
+      <Link>LookAheadParseResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseException.cs">
+      <Link>ParseException.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Parser.cs">
+      <Link>Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParserCursor.cs">
+      <Link>ParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParserCursorBranch.cs">
+      <Link>ParserCursorBranch.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseResult - Concat.cs">
+      <Link>ParseResult - Concat.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseResult - Construction.cs">
+      <Link>ParseResult - Construction.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseResult - Success and Failure.cs">
+      <Link>ParseResult - Success and Failure.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseResult - Yield.cs">
+      <Link>ParseResult - Yield.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParseResult.cs">
+      <Link>ParseResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParserQueryContext.cs">
+      <Link>ParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParserStart.cs">
+      <Link>ParserStart.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\ParserStartBase.cs">
+      <Link>ParserStartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AllManyObservableParser.cs">
+      <Link>Reactive\AllManyObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AllManyUnorderedObservableParser.cs">
+      <Link>Reactive\AllManyUnorderedObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AllObservableParser.cs">
+      <Link>Reactive\AllObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AllUnorderedObservableParser.cs">
+      <Link>Reactive\AllUnorderedObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AmbiguousObservableParser.cs">
+      <Link>Reactive\AmbiguousObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AnonymousObservableParser.cs">
+      <Link>Reactive\AnonymousObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\AnyObservableParser.cs">
+      <Link>Reactive\AnyObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\BinaryObservableParser.cs">
+      <Link>Reactive\BinaryObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\BinaryObservableParserQueryContext.cs">
+      <Link>Reactive\BinaryObservableParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\DeferredObservableParserCursor.cs">
+      <Link>Reactive\DeferredObservableParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\IBinaryObservableParser.cs">
+      <Link>Reactive\IBinaryObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\InlineBinaryObservableParser.cs">
+      <Link>Reactive\InlineBinaryObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\InlineObservableParser.cs">
+      <Link>Reactive\InlineObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\InlineStringObservableParser.cs">
+      <Link>Reactive\InlineStringObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\InlineXmlObservableParser.cs">
+      <Link>Reactive\InlineXmlObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\IObservableParser.cs">
+      <Link>Reactive\IObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\IObservableParserCursor.cs">
+      <Link>Reactive\IObservableParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\IStringObservableParser.cs">
+      <Link>Reactive\IStringObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\IXmlObservableParser.cs">
+      <Link>Reactive\IXmlObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Aggregation.cs">
+      <Link>Reactive\Linq\Aggregation.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Ambiguity and Greediness.cs">
+      <Link>Reactive\Linq\Ambiguity and Greediness.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Construction.cs">
+      <Link>Reactive\Linq\Construction.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Conversion.cs">
+      <Link>Reactive\Linq\Conversion.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Create.cs">
+      <Link>Reactive\Linq\Create.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Errors.cs">
+      <Link>Reactive\Linq\Errors.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Filter.cs">
+      <Link>Reactive\Linq\Filter.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Group.cs">
+      <Link>Reactive\Linq\Group.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Logic.cs">
+      <Link>Reactive\Linq\Logic.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Parse.cs">
+      <Link>Reactive\Linq\Parse.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Projection.cs">
+      <Link>Reactive\Linq\Projection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Quantification.cs">
+      <Link>Reactive\Linq\Quantification.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Side-Effects.cs">
+      <Link>Reactive\Linq\Side-Effects.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\reactive\linq\Success and Failure.cs">
+      <Link>Reactive\Linq\Success and Failure.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParser.cs">
+      <Link>Reactive\ObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParserCursor.cs">
+      <Link>Reactive\ObservableParserCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParserCursorBranch.cs">
+      <Link>Reactive\ObservableParserCursorBranch.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParseResult - Concat.cs">
+      <Link>Reactive\ObservableParseResult - Concat.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParseResult - Construction.cs">
+      <Link>Reactive\ObservableParseResult - Construction.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParseResult - Success and Failure.cs">
+      <Link>Reactive\ObservableParseResult - Success and Failure.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParseResult - Yield.cs">
+      <Link>Reactive\ObservableParseResult - Yield.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParserQueryContext.cs">
+      <Link>Reactive\ObservableParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParserStart.cs">
+      <Link>Reactive\ObservableParserStart.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\ObservableParserStartBase.cs">
+      <Link>Reactive\ObservableParserStartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\StringObservableParser.cs">
+      <Link>Reactive\StringObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\StringObservableParserQueryContext.cs">
+      <Link>Reactive\StringObservableParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\XmlObservableParser.cs">
+      <Link>Reactive\XmlObservableParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\XmlObservableParserQueryContext.cs">
+      <Link>Reactive\XmlObservableParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\Reactive\XmlObservableParser{TResult}.cs">
+      <Link>Reactive\XmlObservableParser{TResult}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\StringParser.cs">
+      <Link>StringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\StringParserDefaults.cs">
+      <Link>StringParserDefaults.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\StringParserQueryContext.cs">
+      <Link>StringParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\System\Linq\OptimizedEnumerable.cs">
+      <Link>System\Linq\OptimizedEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\XmlParser.cs">
+      <Link>XmlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\XmlParserQueryContext.cs">
+      <Link>XmlParserQueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\XmlParser{TResult}.cs">
+      <Link>XmlParser{TResult}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\system\collections\generic\AnonymousEnumerable.cs">
+      <Link>System\Collections\Generic\AnonymousEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\system\collections\generic\AnonymousEnumerator.cs">
+      <Link>System\Collections\Generic\AnonymousEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\System\Reactive\Linq\Observable2 - SelectMany.cs">
+      <Link>System\Reactive\Linq\Observable2 - SelectMany.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Parsers-Net451\System\Reactive\Linq\Observable2 - WithLastElementIndicator.cs">
+      <Link>System\Reactive\Linq\Observable2 - WithLastElementIndicator.cs</Link>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Interactive">
+      <HintPath>..\..\packages\Ix-Main.1.2.3\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Errors.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rxx.Linq-Net451-Win81\Rxx.Linq-Net451-Win81.csproj">
+      <Project>{a2bdc9c8-e9e6-408e-8ad8-33c5bd6aac1b}</Project>
+      <Name>Rxx.Linq-Net451-Win81</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\Build\Project.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props'))" />
+    <Error Condition="!Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets'))" />
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <Import Project="..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets" Condition="Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets')" />
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

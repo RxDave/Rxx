@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props" Condition="Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB95F02E-3934-4967-8802-8DE85451832F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rxx.Linq</RootNamespace>
+    <AssemblyName>Rxx.Linq</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile32</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>e4891e63</NuGetPackageImportStamp>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNIVERSAL;WINDOWS_PHONE;SILVERLIGHT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>False</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UNIVERSAL;WINDOWS_PHONE;SILVERLIGHT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>None</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <DocumentationFile>bin\Release\Rxx.Linq.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Build\Properties\Rxx2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Profiling|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Profiling\</OutputPath>
+    <DefineConstants>UNIVERSAL;WINDOWS_PHONE;SILVERLIGHT;PROFILING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Analysis|AnyCPU'">
+    <OutputPath>bin\Analysis\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE;UNIVERSAL;WINDOWS_PHONE;SILVERLIGHT</DefineConstants>
+    <DocumentationFile>bin\Release\Rxx.Linq.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
+    <TargetPlatform Include="Windows, Version=8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Build\Properties\AssemblyInfoShared.cs">
+      <Link>Properties\AssemblyInfoShared.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\Collections\Generic\ListExtensions.cs">
+      <Link>System\Collections\Generic\ListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\ComponentModel\EventDescriptor.cs">
+      <Link>System\ComponentModel\EventDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\ComponentModel\MemberDescriptor.cs">
+      <Link>System\ComponentModel\MemberDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\ComponentModel\PropertyDescriptor.cs">
+      <Link>System\ComponentModel\PropertyDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451-Win81\System\ComponentModel\TypeDescriptor.cs">
+      <Link>System\ComponentModel\TypeDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\ComponentReflection.cs">
+      <Link>ComponentReflection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\CollectionObservableExtensions.cs">
+      <Link>System\CollectionObservableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Collections\Generic\OperationalEnumerable{TIn, TOut}.cs">
+      <Link>System\Collections\Generic\OperationalEnumerable{TIn, TOut}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Collections\Generic\OperationalEnumerable{T}.cs">
+      <Link>System\Collections\Generic\OperationalEnumerable{T}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\ComponentModel\MemberDescriptorExtensions.cs">
+      <Link>System\ComponentModel\MemberDescriptorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Either - LeftValue.cs">
+      <Link>System\Either - LeftValue.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Either - RightValue.cs">
+      <Link>System\Either - RightValue.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Either.cs">
+      <Link>System\Either.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\EitherObservableExtensions.cs">
+      <Link>System\EitherObservableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\EitherObserver.cs">
+      <Link>System\EitherObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Either{TLeft,TRight}.cs">
+      <Link>System\Either{TLeft,TRight}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\Cursor.cs">
+      <Link>System\Linq\Cursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\CursorBranch.cs">
+      <Link>System\Linq\CursorBranch.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\CursorEnumerable.cs">
+      <Link>System\Linq\CursorEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\Expressions\ExpressionExtensions.cs">
+      <Link>System\Linq\Expressions\ExpressionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\ICursor.cs">
+      <Link>System\Linq\ICursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\OperationalEnumerable - AsOperational.cs">
+      <Link>System\Linq\OperationalEnumerable - AsOperational.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Linq\OperationalEnumerable - Primitives.cs">
+      <Link>System\Linq\OperationalEnumerable - Primitives.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Maybe.cs">
+      <Link>System\Maybe.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Maybe{T}.cs">
+      <Link>System\Maybe{T}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\ObservableDynamicObject.cs">
+      <Link>System\ObservableDynamicObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CoercingObservable.cs">
+      <Link>System\Reactive\CoercingObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CoercingObserver.cs">
+      <Link>System\Reactive\CoercingObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification.cs">
+      <Link>System\Reactive\CollectionModification.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModificationKind.cs">
+      <Link>System\Reactive\CollectionModificationKind.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification{T} - Add.cs">
+      <Link>System\Reactive\CollectionModification{T} - Add.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification{T} - Clear.cs">
+      <Link>System\Reactive\CollectionModification{T} - Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification{T} - Convert.cs">
+      <Link>System\Reactive\CollectionModification{T} - Convert.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification{T} - Remove.cs">
+      <Link>System\Reactive\CollectionModification{T} - Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionModification{T}.cs">
+      <Link>System\Reactive\CollectionModification{T}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification.cs">
+      <Link>System\Reactive\CollectionNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotificationKind.cs">
+      <Link>System\Reactive\CollectionNotificationKind.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - Convert.cs">
+      <Link>System\Reactive\CollectionNotification{T} - Convert.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - Exists.cs">
+      <Link>System\Reactive\CollectionNotification{T} - Exists.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - OnAdded.cs">
+      <Link>System\Reactive\CollectionNotification{T} - OnAdded.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - OnCleared.cs">
+      <Link>System\Reactive\CollectionNotification{T} - OnCleared.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - OnRemoved.cs">
+      <Link>System\Reactive\CollectionNotification{T} - OnRemoved.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T} - OnReplaced.cs">
+      <Link>System\Reactive\CollectionNotification{T} - OnReplaced.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\CollectionNotification{T}.cs">
+      <Link>System\Reactive\CollectionNotification{T}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Concurrency\ConcurrencyEnvironment.cs">
+      <Link>System\Reactive\Concurrency\ConcurrencyEnvironment.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Concurrency\PlatformSchedulers.cs">
+      <Link>System\Reactive\Concurrency\PlatformSchedulers.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Disposables\SerialDisposableExtensions.cs">
+      <Link>System\Reactive\Disposables\SerialDisposableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\EventCoercingObservable.cs">
+      <Link>System\Reactive\EventCoercingObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\EventCoercingObserver.cs">
+      <Link>System\Reactive\EventCoercingObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\EventProxyObservable.cs">
+      <Link>System\Reactive\EventProxyObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\IObservableCursor.cs">
+      <Link>System\Reactive\IObservableCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\IOrderedObservable.cs">
+      <Link>System\Reactive\IOrderedObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\EitherObservable - Combine.cs">
+      <Link>System\Reactive\Linq\EitherObservable - Combine.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\EitherObservable - Create.cs">
+      <Link>System\Reactive\Linq\EitherObservable - Create.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\EitherObservable - ForEachPair.cs">
+      <Link>System\Reactive\Linq\EitherObservable - ForEachPair.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\EitherObservable - Select.cs">
+      <Link>System\Reactive\Linq\EitherObservable - Select.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\EitherObservable - Take.cs">
+      <Link>System\Reactive\Linq\EitherObservable - Take.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\MaybeObservable.cs">
+      <Link>System\Reactive\Linq\MaybeObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\NotifyCollectionChangedExtensions.cs">
+      <Link>System\Reactive\Linq\NotifyCollectionChangedExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Coerce.cs">
+      <Link>System\Reactive\Linq\Observable2 - Coerce.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Collection.cs">
+      <Link>System\Reactive\Linq\Observable2 - Collection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - CombineLatest.cs">
+      <Link>System\Reactive\Linq\Observable2 - CombineLatest.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Concurrency.cs">
+      <Link>System\Reactive\Linq\Observable2 - Concurrency.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Cursor.cs">
+      <Link>System\Reactive\Linq\Observable2 - Cursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Dictionary.cs">
+      <Link>System\Reactive\Linq\Observable2 - Dictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Errors - Catch.cs">
+      <Link>System\Reactive\Linq\Observable2 - Errors - Catch.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Errors - OnErrorResumeNext.cs">
+      <Link>System\Reactive\Linq\Observable2 - Errors - OnErrorResumeNext.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Errors - Retry.cs">
+      <Link>System\Reactive\Linq\Observable2 - Errors - Retry.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - FromEventBasedAsyncPattern.cs">
+      <Link>System\Reactive\Linq\Observable2 - FromEventBasedAsyncPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - FromPropertyChangedPattern.cs">
+      <Link>System\Reactive\Linq\Observable2 - FromPropertyChangedPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Introspection.cs">
+      <Link>System\Reactive\Linq\Observable2 - Introspection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Multicast.cs">
+      <Link>System\Reactive\Linq\Observable2 - Multicast.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Ordering.cs">
+      <Link>System\Reactive\Linq\Observable2 - Ordering.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Pairing.cs">
+      <Link>System\Reactive\Linq\Observable2 - Pairing.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Priming.cs">
+      <Link>System\Reactive\Linq\Observable2 - Priming.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Producer Consumer Pattern.cs">
+      <Link>System\Reactive\Linq\Observable2 - Producer Consumer Pattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - PropertyChanges.cs">
+      <Link>System\Reactive\Linq\Observable2 - PropertyChanges.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Time - Patterns.cs">
+      <Link>System\Reactive\Linq\Observable2 - Time - Patterns.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Time - Shifting.cs">
+      <Link>System\Reactive\Linq\Observable2 - Time - Shifting.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - UsingHot.cs">
+      <Link>System\Reactive\Linq\Observable2 - UsingHot.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Zip.cs">
+      <Link>System\Reactive\Linq\Observable2 - Zip.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\OperationalObservable - AsOperational.cs">
+      <Link>System\Reactive\Linq\OperationalObservable - AsOperational.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\OperationalObservable - Primitives.cs">
+      <Link>System\Reactive\Linq\OperationalObservable - Primitives.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Linq\PairDirection.cs">
+      <Link>System\Reactive\Linq\PairDirection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\ObservableCursor.cs">
+      <Link>System\Reactive\ObservableCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\ObservableCursorBranch.cs">
+      <Link>System\Reactive\ObservableCursorBranch.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\ObservableCursorSubscription.cs">
+      <Link>System\Reactive\ObservableCursorSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\OperationalObservable{TIn, TOut}.cs">
+      <Link>System\Reactive\OperationalObservable{TIn, TOut}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\OperationalObservable{T}.cs">
+      <Link>System\Reactive\OperationalObservable{T}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\OrderedObservable{TSource,TKey}.cs">
+      <Link>System\Reactive\OrderedObservable{TSource,TKey}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\OrderedObservable{TSource}.cs">
+      <Link>System\Reactive\OrderedObservable{TSource}.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\CursorSubject.cs">
+      <Link>System\Reactive\Subjects\CursorSubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\DictionarySubject - IndexedDictionary.cs">
+      <Link>System\Reactive\Subjects\DictionarySubject - IndexedDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\DictionarySubject.cs">
+      <Link>System\Reactive\Subjects\DictionarySubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\IDictionarySubject.cs">
+      <Link>System\Reactive\Subjects\IDictionarySubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\IListSubject.cs">
+      <Link>System\Reactive\Subjects\IListSubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\ListSubject.cs">
+      <Link>System\Reactive\Subjects\ListSubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\ReadOnlyDictionarySubject.cs">
+      <Link>System\Reactive\Subjects\ReadOnlyDictionarySubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\ReadOnlyListSubject.cs">
+      <Link>System\Reactive\Subjects\ReadOnlyListSubject.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\Subjects\ReconnectableObservable.cs">
+      <Link>System\Reactive\Subjects\ReconnectableObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Reactive\SynchronizedObservableCursor.cs">
+      <Link>System\Reactive\SynchronizedObservableCursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\SafeObservableExtensions.cs">
+      <Link>System\SafeObservableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Scalar.cs">
+      <Link>System\Scalar.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Linq-Net451\System\Scalar{T}.cs">
+      <Link>System\Scalar{T}.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Interactive">
+      <HintPath>..\..\packages\Ix-Main.1.2.3\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\portable-win81+wpa81\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\portable-win81+wpa81\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\portable-win81+wpa81\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\portable-win81+wpa81\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\..\Build\Properties\CodeAnalysisDictionary.xml">
+      <Link>Properties\CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Rxx.Linq-Net451\System\Reactive\Linq\Observable2 - Collection and Dictionary.xml">
+      <Link>System\Reactive\Linq\Observable2 - Collection and Dictionary.xml</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Errors.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\Build\Project.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WhiteTie.1.3.13\build\WhiteTie.props'))" />
+    <Error Condition="!Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets'))" />
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <Import Project="..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets" Condition="Exists('..\..\packages\WhiteTie.1.3.13\build\WhiteTie.targets')" />
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

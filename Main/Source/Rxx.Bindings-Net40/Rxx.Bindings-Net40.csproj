@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2530D3F9-687F-4675-A0CB-363D9C0D1015}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rxx.Bindings</RootNamespace>
+    <AssemblyName>Rxx.Bindings</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>c16a53e0</NuGetPackageImportStamp>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Build\Properties\Rxx2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>False</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>False</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>True</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>1</CodeContractsAnalysisWarningLevel>
+    <DocumentationFile>bin\Release\Rxx.Bindings.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Profiling|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Profiling\</OutputPath>
+    <DefineConstants>NET_40;PROFILING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Analysis|AnyCPU'">
+    <OutputPath>bin\Analysis\</OutputPath>
+    <DefineConstants>TRACE;NET_40</DefineConstants>
+    <DocumentationFile>bin\Release\Rxx.Bindings.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\Build\Properties\Rxx.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>False</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>True</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>1</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Interactive">
+      <HintPath>..\..\packages\Ix-Main.1.2.3\lib\net40\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\net40\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\net40\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\net40\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\net40\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Build\Properties\AssemblyInfoShared.cs">
+      <Link>Properties\AssemblyInfoShared.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\Properties\Errors.Designer.cs">
+      <Link>Properties\Errors.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\Properties\Text.Designer.cs">
+      <Link>Properties\Text.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Configuration\ApplicationSettingsBaseExtensions.cs">
+      <Link>System\Configuration\ApplicationSettingsBaseExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Data\SqlClient\SqlCommandExtensions.cs">
+      <Link>System\Data\SqlClient\SqlCommandExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\DirectoryInfoExtensions.cs">
+      <Link>System\IO\DirectoryInfoExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\FileStreamExtensions.cs">
+      <Link>System\IO\FileStreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\FileSystemNotification.cs">
+      <Link>System\IO\FileSystemNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\FileSystemWatcherBufferOverflowException.cs">
+      <Link>System\IO\FileSystemWatcherBufferOverflowException.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\FileSystemWatcherExtensions.cs">
+      <Link>System\IO\FileSystemWatcherExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\ObservableDirectory.cs">
+      <Link>System\IO\ObservableDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\ObservableFile.cs">
+      <Link>System\IO\ObservableFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\StreamExtensions.cs">
+      <Link>System\IO\StreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\IO\TextReaderExtensions.cs">
+      <Link>System\IO\TextReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\HttpListenerExtensions.cs">
+      <Link>System\Net\HttpListenerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Mail\ObservableSmtpClient.cs">
+      <Link>System\Net\Mail\ObservableSmtpClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Mail\SmtpClientExtensions.cs">
+      <Link>System\Net\Mail\SmtpClientExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\NetworkInformation\ObservableNetworkChange.cs">
+      <Link>System\Net\NetworkInformation\ObservableNetworkChange.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\NetworkInformation\ObservablePing.cs">
+      <Link>System\Net\NetworkInformation\ObservablePing.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\NetworkInformation\PingExtensions.cs">
+      <Link>System\Net\NetworkInformation\PingExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableDns.cs">
+      <Link>System\Net\ObservableDns.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableHttpListener.cs">
+      <Link>System\Net\ObservableHttpListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - DownloadData.cs">
+      <Link>System\Net\ObservableWebClient - DownloadData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - DownloadFile.cs">
+      <Link>System\Net\ObservableWebClient - DownloadFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - DownloadString.cs">
+      <Link>System\Net\ObservableWebClient - DownloadString.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - OpenRead.cs">
+      <Link>System\Net\ObservableWebClient - OpenRead.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - OpenWrite.cs">
+      <Link>System\Net\ObservableWebClient - OpenWrite.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - UploadData.cs">
+      <Link>System\Net\ObservableWebClient - UploadData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - UploadFile.cs">
+      <Link>System\Net\ObservableWebClient - UploadFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - UploadString.cs">
+      <Link>System\Net\ObservableWebClient - UploadString.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\ObservableWebClient - UploadValues.cs">
+      <Link>System\Net\ObservableWebClient - UploadValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\ObservableSocket - Accept.cs">
+      <Link>System\Net\Sockets\ObservableSocket - Accept.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\ObservableSocket - Connection.cs">
+      <Link>System\Net\Sockets\ObservableSocket - Connection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\ObservableTcpListener.cs">
+      <Link>System\Net\Sockets\ObservableTcpListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\SocketAsyncEventArgsExtensions.cs">
+      <Link>System\Net\Sockets\SocketAsyncEventArgsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\SocketExtensions - Accept.cs">
+      <Link>System\Net\Sockets\SocketExtensions - Accept.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\SocketExtensions - Connection.cs">
+      <Link>System\Net\Sockets\SocketExtensions - Connection.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\SocketExtensions - Receive.cs">
+      <Link>System\Net\Sockets\SocketExtensions - Receive.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\SocketExtensions - Send.cs">
+      <Link>System\Net\Sockets\SocketExtensions - Send.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\TcpClientExtensions.cs">
+      <Link>System\Net\Sockets\TcpClientExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\Sockets\TcpListenerExtensions.cs">
+      <Link>System\Net\Sockets\TcpListenerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - DownloadData.cs">
+      <Link>System\Net\WebClientExtensions - DownloadData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - DownloadFile.cs">
+      <Link>System\Net\WebClientExtensions - DownloadFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - DownloadString.cs">
+      <Link>System\Net\WebClientExtensions - DownloadString.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - OpenRead.cs">
+      <Link>System\Net\WebClientExtensions - OpenRead.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - OpenWrite.cs">
+      <Link>System\Net\WebClientExtensions - OpenWrite.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - UploadData.cs">
+      <Link>System\Net\WebClientExtensions - UploadData.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - UploadFile.cs">
+      <Link>System\Net\WebClientExtensions - UploadFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - UploadString.cs">
+      <Link>System\Net\WebClientExtensions - UploadString.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebClientExtensions - UploadValues.cs">
+      <Link>System\Net\WebClientExtensions - UploadValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Net\WebRequestExtensions.cs">
+      <Link>System\Net\WebRequestExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\ServiceModel\CommunicationObjectExtensions.cs">
+      <Link>System\ServiceModel\CommunicationObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\ServiceModel\Syndication\ObservableSyndication.cs">
+      <Link>System\ServiceModel\Syndication\ObservableSyndication.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\ServiceModel\Syndication\SyndicationFeedFormatterExtensions.cs">
+      <Link>System\ServiceModel\Syndication\SyndicationFeedFormatterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Windows\DependencyObjectExtensions.cs">
+      <Link>System\Windows\DependencyObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Windows\Input\CommandExtensions.cs">
+      <Link>System\Windows\Input\CommandExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Rxx.Bindings-Net451\System\Windows\UIElementExtensions.cs">
+      <Link>System\Windows\UIElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\..\Build\Properties\CodeAnalysisDictionary.xml">
+      <Link>Properties\CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rxx.Linq-Net40\Rxx.Linq-Net40.csproj">
+      <Project>{fe8334bd-b1fb-4c25-8952-6df6dddd7377}</Project>
+      <Name>Rxx.Linq-Net40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Rxx.Bindings-Net451\Properties\Errors.resx">
+      <Link>Properties\Errors.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Rxx.Bindings-Net451\Properties\Text.resx">
+      <Link>Properties\Text.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\Project.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

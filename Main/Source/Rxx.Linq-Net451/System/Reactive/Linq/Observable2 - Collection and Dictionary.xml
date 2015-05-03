@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+
+	<extension name="Collect">
+
+		<remarks>
+			<para>
+				The <paramref name="changes"/> sequence is subscribed to first, followed by the <paramref name="existing"/> sequence on
+				another thread.  This order of subscription avoids a certain race condition that could otherwise allow an element that
+				no longer exists to be added anyway, without receiving a corresponding <em>Remove</em> notification from the <paramref name="changes"/>
+				sequence.
+			</para>
+			<para>
+				The <paramref name="existing"/> sequence is used to populate the initial state of the collection, under the assumption that the
+				<paramref name="changes"/> sequence does not provide <see cref="CollectionModificationKind.Add"/> notifications for
+				elements that are considered to already exist; however, it may provide <see cref="CollectionModificationKind.Add"/>
+				notifications for existing elements after it provides corresponding <see cref="CollectionModificationKind.Remove"/>
+				notifications for those elements, thus the <paramref name="changes"/> sequence is processed concurrently while the collection is
+				being populated by the <paramref name="existing"/> sequence.
+			</para>
+			<para>
+				The <paramref name="changes"/> sequence is given precedence for all race conditions and conflicts while the collection is being
+				populated by the <paramref name="existing"/> sequence.  This process is referred to as reconciliation.
+			</para>
+			<para>
+				Reconciliation ends when either of the two sequences completes.  It also ends upon the first
+				<see cref="CollectionModificationKind.Clear"/> notification to be received, because this indicates that there are no
+				more existing elements.  The remainder of the <paramref name="existing"/> sequence is therefore ignored.  If the
+				<paramref name="existing"/> sequence is still producing elements, then those elements must have been created recently and
+				simply picked up by the <paramref name="existing"/> sequence due to a race condition outside of the control of this method;
+				however, the <paramref name="changes"/> sequence is still expected to provide <see cref="CollectionModificationKind.Add"/>
+				notifications for these new elements, so they will not be missed.
+			</para>
+			<para>
+				A well-behaving <paramref name="existing"/> sequence:
+			</para>
+			<list type="1">
+				<item>
+					<description>
+						<strong>MUST</strong> provide a forward-only view of the source.
+					</description>
+				</item>
+				<item>
+					<description>
+						<strong>MUST</strong> ensure that element positions within the sequence are unique and absolute.
+					</description>
+				</item>
+				<item>
+					<description>
+						<strong>SHOULD</strong> finish observing all existing items and call <em>OnCompleted</em>.
+					</description>
+				</item>
+			</list>
+			<para>
+				Therefore, if an element is created after the <paramref name="existing"/> sequence has passed the element's absolute position,
+				it will not be included in the <paramref name="existing"/> sequence; however, a well-behaving <paramref name="changes"/>
+				sequence will include it.  Furthermore, if an element is observed by the <paramref name="existing"/> sequence and then
+				subsequently deleted and recreated, it will not be observed a second time.
+			</para>
+			<para>
+				A well-behaving <paramref name="changes"/> sequence:
+			</para>
+			<list type="1">
+				<item>
+					<description>
+						<strong>MUST</strong> generate notifications in a logical order.
+					</description>
+				</item>
+				<item>
+					<description>
+						<strong>SHOULD</strong> provide a dynamic, real-time view that includes all changes to the source.
+					</description>
+				</item>
+			</list>
+			<para>
+				An example of a logical order for the <paramref name="changes"/> sequence is to include an
+				<see cref="CollectionModificationKind.Add"/> notification followed by a <see cref="CollectionModificationKind.Remove"/>
+				notification when an element has been added and subsequently removed.  An example of an illogical order for this scenario is
+				to include a <see cref="CollectionModificationKind.Remove"/> notification before an <see cref="CollectionModificationKind.Add"/>
+				notification, which does not accurately reflect the state of changes to the source.
+			</para>
+			<alert type="warning">
+				An illogical ordering of notifications in the <paramref name="changes"/> sequence voids all guarantees that the
+				reconciliation process makes about the state of the collection when the <paramref name="existing"/> sequence
+				completes, and also voids all guarantees about the active state of the collection thereafter.
+			</alert>
+		</remarks>
+
+	</extension>
+
+</doc>

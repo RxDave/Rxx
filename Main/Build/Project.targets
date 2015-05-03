@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<ExternalReferencesDir>$([System.IO.Path]::GetFullPath("$(SolutionDir)External References"))\</ExternalReferencesDir>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectDeploymentDir>$(DeploymentDir)$(Configuration)\$(MSBuildProjectName)\</ProjectDeploymentDir>
+		<CodePlexDeploymentDir>$(ProjectDeploymentDir)</CodePlexDeploymentDir>
+		<SymbolsPackDir>$(ProjectDeploymentDir)</SymbolsPackDir>
+		<GeneralOutputName Condition=" '$(GeneralOutputName)' == '' ">$(MSBuildProjectName)</GeneralOutputName>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CodePlexZipFile>$(CodePlexDeploymentDir)$(GeneralOutputName).zip</CodePlexZipFile>
+		<SymbolsPackFile>$(SymbolsPackDir)$(GeneralOutputName).Symbols.zip</SymbolsPackFile>
+		<CodeContractsAssemblyName>$(TargetName).Contracts$(TargetExt)</CodeContractsAssemblyName>
+		<CodeContractsAssembly>$(TargetDir)CodeContracts\$(CodeContractsAssemblyName)</CodeContractsAssembly>
+		<CodeContractsSymbols>$(TargetDir)CodeContracts\$(TargetName).Contracts.pdb</CodeContractsSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<StaticAnalysisEnabled Condition=" '$(Configuration)' == 'Profiling' ">False</StaticAnalysisEnabled>
+		<BuildPackage Condition=" '$(LabsBuildSecondPass)' == True ">False</BuildPackage>
+		<BuildDocumentation Condition=" '$(LabsBuildSecondPass)' == True ">False</BuildDocumentation>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CodeContractsExtraAnalysisOptions>-outputwarnmasks</CodeContractsExtraAnalysisOptions>
+
+		<!--
+		Had to disable CC on all portable projects due to contingent "PDB in use" build errors and/or fatal CC tool errors during builds.
+		Also disabled simply because the portable Frameworks' contract surface areas have some annoying inconsistencies, and frankly static 
+		checking the desktop platform projects only should be good enough since there's not much if any APIs that are unique to the portable
+		libraries.
+		-->
+		<StaticAnalysisEnabled Condition=" '$(MSBuildProjectName.Contains(`-Win`))' == True
+																		OR '$(MSBuildProjectName.Contains(`-WP`))' == True 
+																		OR '$(MSBuildProjectName.Contains(`-SL`))' == True 
+																		OR '$(MSBuildProjectName.Contains(`-Net40`))' == True ">False</StaticAnalysisEnabled>
+	</PropertyGroup>
+
+	<Import Project="Projects\$(MSBuildProjectName).targets" Condition=" Exists('Projects\$(MSBuildProjectName).targets') " />
+
+	<PropertyGroup>
+		<PrepareDeploymentDependsOn>
+			BeforePrepareDeployment;
+		</PrepareDeploymentDependsOn>
+	</PropertyGroup>
+	<Target Name="PrepareDeployment" DependsOnTargets="$(PrepareDeploymentDependsOn)" AfterTargets="Build" BeforeTargets="BuildPackage"
+					Condition=" '$(Configuration)' == 'Release' AND '$(LabsBuildSecondPass)' != True ">
+	</Target>
+
+	<PropertyGroup>
+		<PostBuildDeploymentPackagesDependsOn>
+			CreateNuGetPushFile;
+			CodePlexPack;
+			SymbolsPack;
+		</PostBuildDeploymentPackagesDependsOn>
+	</PropertyGroup>
+	<Target Name="PostBuildDeploymentPackages" DependsOnTargets="$(PostBuildDeploymentPackagesDependsOn)" AfterTargets="DeployPackage"
+					Condition=" '$(LabsBuildSecondPass)' != True ">
+	</Target>
+
+	<Target Name="CreateNuGetPushFile" Condition=" Exists('$(ProjectDeploymentDir)') ">
+
+		<ItemGroup>
+			<NuGetPackages Include="$(TargetDir)*.nupkg" />
+
+			<NuGetPush Include="@ECHO OFF" />
+			<NuGetPush Include="SET /P APIKey=API Key (Optional): " />
+			<NuGetPush Include="&quot;$(NuGetExePath)&quot; push &quot;$(NuGetPackages)&quot; %APIKey%" />
+			<!-- Optional switch: –source http://packages.nuget.org/v1/ -->
+			<NuGetPush Include="PAUSE" />
+		</ItemGroup>
+
+		<WriteLinesToFile File="$(ProjectDeploymentDir)NuGetPush.bat" Lines="@(NuGetPush)" />
+
+	</Target>
+
+	<Target Name="CodePlexPack" Condition=" '$(Configuration)' == 'Release' ">
+
+		<ItemGroup>
+			<!-- Workaround: http://social.msdn.microsoft.com/Forums/en-US/msbuild/thread/8a2f4af8-7a57-454f-aa7d-684f3f89acf3 -->
+			<CodePlexZip Condition=" !Exists($(DocumentationFile)) AND '$(BuildingInsideVisualStudio)' == True " Include="$(TargetDir)*.tmp">
+				<ZipFilename>$(TargetName).xml</ZipFilename>
+			</CodePlexZip>
+			<CodePlexZip Condition=" Exists($(DocumentationFile)) " Include="$(DocumentationFile)" />
+		</ItemGroup>
+
+		<Zip SourceFiles="@(CodePlexZip)" DestinationZipFile="$(CodePlexZipFile)" />
+
+		<Copy Condition=" '@(CompiledDocumentation)' != '' " SourceFiles="@(CompiledDocumentation)" DestinationFolder="$(CodePlexDeploymentDir)" />
+
+	</Target>
+
+	<Target Name="SymbolsPack" Condition=" '$(Configuration)' == 'Release' ">
+
+		<ItemGroup>
+			<SymbolsZip Condition=" Exists('$(TargetDir)$(TargetName).pdb') " Include="$(TargetDir)$(TargetName).pdb" />
+			<SymbolsZip Condition=" Exists('$(CodeContractsSymbols)') " Include="$(CodeContractsSymbols)" />
+		</ItemGroup>
+
+		<Zip Condition=" '@(SymbolsZip)' != '' " SourceFiles="@(SymbolsZip)" DestinationZipFile="$(SymbolsPackFile)" />
+
+	</Target>
+
+</Project>

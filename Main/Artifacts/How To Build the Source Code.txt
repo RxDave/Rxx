@@ -1,0 +1,137 @@
+How To Build the Source Code
+
+	Date				Author				Changes
+	1/22/2012		Dave S.				First draft
+	9/14/2012		Dave S.				Removed info regarding the legacy Rx Experimental release.
+	10/10/2013	Dave S.				Updated for VS 2012/2013.
+
+
+Online version: http://rxx.codeplex.com/wikipage?title=Building
+
+
+Overview:
+
+	This document specifies the required dependencies and procedures to prepare and build the Rxx solution 
+	in Visual Studio 2012 Pro edition or higher for the purpose of unofficial development.
+
+	All projects are located under the Source and Testing folders in the solution.
+
+	All of the other folders contain either documentation or required dependencies, such as assemblies, 
+	MSBuild scripts and build tools.  All of these folders can be safely removed from the solution, but the
+	files that they contain must not be deleted from disc.
+
+
+Contributions: 
+
+	If you'd like to contribute features or bug fixes, then please read the following documents.
+	
+	Contributing to Rxx
+	http://rxx.codeplex.com/wikipage?title=Contributions
+
+	Goals and Guidelines.txt
+	Located in the Artifacts folder of this solution.
+
+
+Prerequisites:
+
+	Rxx depends on the following software.  You must install all of these tools before opening the solution.
+
+	If you have already opened the solution before installing the necessary software, then all projects in 
+	the solution may currently be unloaded.
+
+	To reload the projects: 
+
+		1. Close Visual Studio.
+		2. Install the following software.  (Reboot if asked.)
+		3. Open the solution in Visual Studio.
+		4. For each project that is still unloaded, right-mouse click the project and select Reload Project.
+				a. If any projects will not reload, then check to make sure that you have installed the latest
+					 version of the tools listed below.  It's also possible that a newer version of a tool was
+					 released but Rxx has not been upgraded yet.
+		5. Continue to the "Preparing the Solution" section below.
+
+
+	Code Contracts (Latest Version)
+	http://msdn.microsoft.com/en-us/devlabs/dd491992
+
+
+	StyleCop (Latest Version)
+		1. StyleCop is not required to build the solution, for the purpose of unofficial development.
+			 a. If you don't want to install StyleCop, then you can remove the MSBuild import from the 
+					Project.targets file in the solution's Build folder.  Search for a line similar to the 
+					following in that file and delete it:
+
+					<Import Project="$(MSBuildExtensionsPath)\StyleCop\vX.X\StyleCop.Targets" />
+
+		2. MSBuild Integration Files are required by Rxx.  You must enable this feature in the installer.
+		3. Visual Studio Integration is not required by Rxx.  You can safely disable this feature.
+		4. Visual Studio Templates are not required by Rxx.  You can safely disable this feature.
+	http://stylecop.codeplex.com/
+
+
+	Code Analysis (or FxCop)
+		1. Code Analysis is not required to build the solution, for the purpose of unofficial development.
+	http://msdn.microsoft.com/en-us/library/3z0aeatx.aspx
+
+
+	Sandcastle (Latest Version)
+		1. Sandcastle is only required to build the solution in Release mode within Visual Studio.
+		2. See the "Sandcastle Read Me.txt" file in the solution's Build\Documentation\ folder for details.
+		3. The Sandcastle Styles Guided Installer is no longer available.  As of Oct. 2012, you must install
+			 the Sandcastle Help File Builder utility to obtain the latest version of Sandcastle.
+	http://shfb.codeplex.com/releases
+
+	
+Preparing the Solution: 
+
+	The following procedure describes how to prepare the Rxx solution for the purpose of unofficial 
+	development.  These steps are only required one time.  After completing them, you will be able to 
+	open and build the solution just like any other solution.
+
+	Note: Windows flags certain kinds of files that are downloaded from the internet, such as .dll files, 
+				even if they are contained within a .ZIP file.  If you get any errors when opening or building 
+				the solution stating that a particular file is locked, then browse to the file in Windows 
+				Explorer, right-mouse click, select Properties, click Unblock and click OK.
+
+	Note: The CodePlex source control system (TFS) marks all files as read-only.  If you get any errors 
+				when opening or building the solution stating that a particular file is read-only, then browse 
+				to the file in Windows Explorer, right-mouse click, select Properties, uncheck the Read-only 
+				box and click OK.
+
+	1. Open the solution (Rxx.sln) in Visual Studio.
+			a. There are multiple versions of the solution targeting different versions of Rx.  The folder
+				 named Main always contains the latest version of Rxx, currently in development against the
+				 latest version of Rx.
+	2. When prompted to connect to TFS source control, click Cancel.
+			a. If you only receive a message about the source control bindings being invalid, click OK.
+	3. You may be prompted to "Go Offline".  Click OK.
+	4. Go to File > Source Control > Change Source Control...
+	5. When prompted, choose to permanently remove source control association bindings.
+	6. Go to File > Save All.  Your changes to the solution are now saved.
+	7. For each project in the Source and Testing folders: 
+			a. Open the project's Properties window.
+			b. Go to the Signing tab.
+			c. Uncheck "Sign the assembly".
+	8. Save all changes.
+
+
+Building: 
+
+	1. Select one of the following solution build configurations:
+			a. Debug
+				 Unoptimized build against the latest stable release of Rx.  Runs complete static analysis.
+			b. Profiling
+				 Optimized build against the latest stable release of Rx.  Does not run any static analysis.
+			c. Release
+				 Optimized build against the latest stable release of Rx.  Runs complete static analysis, 
+				 builds documentation and generates complete deployment packages for CodePlex and NuGet.
+					I. Release mode is not recommended for building inside Visual Studio.
+						 To build outside of VS, navigate to the solution's Build folder in Windows Explorer and 
+						 double-click the RxxBuild.bat file.  A new console window opens and is automatically set 
+						 to the appropriate current directory.  You will be prompted to enable various build options
+						 before the solution is built.
+					II. See the "Deployment Procedure.txt" file in the solution's Deployment folder for details
+							about the output of Release mode builds.
+	2. To debug Rxx, set one of the lab projects as the start-up project.  Lab projects are located under 
+		 the solution's Testing\Labs\ folder.
+	3. Build the solution or individual projects as you would normally.

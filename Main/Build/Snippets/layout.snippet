@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>layout</Keyword>
+        <Keyword>region</Keyword>
+        <Keyword>C#</Keyword>
+        <Keyword>class</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Class Layout Regions</Title>
+      <Author>Dave Sexton</Author>
+      <Description>Creates several #region blocks for the placement of specific code elements in a class definition.</Description>
+      <HelpUrl>http://davesexton.com/blog/blogs/blog/archive/2006/12/14/Custom-C_2300_-Code-Snippets.aspx</HelpUrl>
+      <Shortcut>layout</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>class</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>ClassName()</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="method decl"><![CDATA[#region Public Properties
+			#endregion
+			
+			#region Private / Protected
+			#endregion
+			
+			#region Constructors
+			/// <summary>
+			/// Constructs a new instance of the <see cref="$class$" /> class.
+			/// </summary>
+			public $class$($end$)
+			{
+			}
+			#endregion
+			
+			#region Methods
+			$selected$
+			#endregion
+			
+			#region Events
+			#endregion
+			
+			#region Event Handlers
+			#endregion
+			
+			#region Nested
+			#endregion]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

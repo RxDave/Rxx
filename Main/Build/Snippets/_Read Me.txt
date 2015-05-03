@@ -1,0 +1,38 @@
+Snippets
+
+	We use IntelliSense code snippets to simplify development.  Snippets allow us to encapsulate 
+	common coding patterns into simple keywords that are easy to remember and use.
+
+Installation
+
+	All of our snippets are located under the solution's Build\Snippets\ folder.
+
+	After you install the snippets you can begin using them without restarting Visual Studio.
+
+	Once installed, these snippets are available for use in any solution, not just this one.
+	
+	To install our snippets: 
+
+		1. Select the menu item: Tools > Code Snippets Manager...
+		2. Click the "Import..." button at the bottom.
+		3. Browse to our solution's snippets folder on your computer.
+			 a. For example: C:\Projects\Rxx\Main\Build\Snippets\
+		4. Select all of the .snippet files that you would like to import.  Click Open.
+		5. On the right side, select a target installation folder.
+			 a. This is optional.  You can use the default location: "My Code Snippets"
+		6. Click Finish.
+		7. If you want to verify installation, then do not close the Code Snippets Manager.
+
+	To verify snippet installation: 
+
+		1. Open the Code Snippets Manager (see above).
+		2. Select "Visual C#" from the Language drop down (assuming the snippet targets C#).
+		3. Expand the "My Code Snippets" folder and look for the installed snippets.
+
+References
+
+	Creating and Using IntelliSense Code Snippets
+	http://msdn.microsoft.com/en-us/library/ms165392.aspx
+
+	How to: Package Components to Use the Visual Studio Content Installer
+	http://msdn.microsoft.com/en-us/library/ms246580.aspx

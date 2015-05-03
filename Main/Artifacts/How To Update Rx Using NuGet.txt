@@ -1,0 +1,31 @@
+How To Update Rx Using NuGet
+
+	Date				Author				Changes
+	6/29/2011		Dave S.				First draft
+	9/14/2012		Dave S.				Removed instructions regarding the legacy Rxx Experimental builds.
+	8/19/2014		Dave S.				Removed instructions regarding the legacy build system.  White Tie is now used instead.
+
+
+Overview:
+
+This document describes how to upgrade the solution to newer releases of Rx.
+
+Rxx depends on the latest stable version of Rx.  NuGet is used to make packaging Rxx easier.
+
+How to upgrade to newer versions of Rx: 
+
+	1. Right-mouse click a project node in Solution Explorer and select "Manage NuGet Packages..."
+     a. Alternatively, right-mouse click the solution in Solution Explorer and select "Manage NuGet Packages for Solution...".
+     b. Then continue with this procedure, skipping step #6 below.
+	2. Click on the Updates tab in the left pane and wait for the Rx package updates to appear.
+	3. When the available Rx package updates appear, click the Update buttons for all of them.
+	4. When all of the updates are finished, make sure they all have green check marks next to them.
+	5. Save your changes.
+	6. Repeat steps 1 to 5 for all projects in the solution, including all libraries, labs and unit test projects.
+	7. Browse to the solution's Build folder in Windows Explorer and double-click RxxBuild.bat to build the entire solution in Release mode.
+     a. Alternatively, you can rebuild the entire solution in Release mode inside Visual Studio, but beware that this will take quite some time; on some 
+        computers well over 15 minutes.  This is because the library projects run complete static analysis, unit tests and build reference docs using 
+        Sandcastle, for each flavor.  If you use RxxBuild.bat instead, then you can disable static analysis and documentation output to make the build 
+        go much faster.
+	8. The entire build process should succeed with no errors and generally no warnings.
+	9. Confirm that the build output is correct.  Refer to the solution's "Deployment\Deployment Procedure.txt" file for instructions.

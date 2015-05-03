@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<UnitTestsEnabled Condition=" '$(UnitTestsEnabled)' == '' " >False</UnitTestsEnabled>
+		<MSTest>$(VS110COMNTOOLS)..\IDE\MSTest.exe</MSTest>
+	</PropertyGroup>
+
+	<Target Name="RunUnitTests" AfterTargets="Build" Condition=" '$(UnitTestsEnabled)' == True ">
+
+		<ItemGroup>
+			<MSTestParameter Include="/testmetadata:&quot;$(MSBuildThisFileDirectory)..\..\Rxx.vsmdi&quot;" />
+			<MSTestParameter Include="/noisolation" />
+			<MSTestParameter Include="/usestderr" />
+		</ItemGroup>
+
+		<Exec Condition=" EXISTS('$(MSTest)') "
+					Command="&quot;$(MSTest)&quot; @(MSTestParameter,' ')" />
+
+		<Error Condition=" !EXISTS('$(MSTest)') "
+					 Text="MSTest.exe was not found.  If you do not have the required version of Visual Studio installed, then disable unit tests when building from the command line." />
+
+	</Target>
+
+</Project>

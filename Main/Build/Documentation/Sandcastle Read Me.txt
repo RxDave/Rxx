@@ -1,0 +1,49 @@
+Sandcastle
+
+	Date				Author				Changes
+	6/9/2011		Dave S.				First draft
+	6/23/2011		Dave S.				Additional info about mutli-targeting.
+	9/14/2012		Dave S.				Removed "Experimental" from folder paths.
+
+
+Overview
+
+This project uses Microsoft Sandcastle and the HTML Help Workshop compiler to 
+build reference documentation into a .chm file.  Any Conceptual documentation that
+we offer is written in wiki format and hosted on our project's Documentation tab on 
+CodePlex: http://rxx.codeplex.com/Documentation
+
+Note that we're using White Tie to automate Sandcastle (SHFB), among on other build tasks.
+
+(http://whitetie.codeplex.com)
+
+
+How To Build Documentation
+
+To build the .chm file, you'll first need to install the latest release of Sandcastle 
+with the latest style patches applied.  The Sandcastle Guided Installer from the 
+Sandcastle Styles project on CodePlex is no longer available.  As of Oct. 2012, you 
+must install the Sandcastle Help File Builder utility to obtain the latest version 
+of Sandcastle.
+
+		 http://shfb.codeplex.com/releases
+
+
+When you've completed the Sandcastle Guided Installer you may need to reboot your 
+computer for the environment changes to take effect.
+
+After Sandcastle is installed, simply change the current solution configuration to 
+Release mode and then build the solution normally.  You'll find the .chm file in the 
+solution's deployment folder after the build completes.  For example: 
+
+	Deployment\Release\{Project}\{Project}.chm
+
+Each of the projects that target different platform versions of the .NET Framework, 
+such as Rxx, Rxx-Silverlight and Rxx-Phone, will generate their .chm files in their 
+own CodePlex deployment folders.
+
+Note:
+	Sandcastle freezes Visual Studio and it can take quite a long time, especially on a 
+	computer with low memory or a slow hard drive.  Just be patient.  Wait a few minutes 
+	for Sandcastle to complete.  Its build log will appear in the output window when it's
+	done, after which the build will resume by executing the deployment packaging tasks.

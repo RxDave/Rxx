@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+	<Words>
+		<!-- 
+		How to: Customize the Code Analysis Dictionary
+		http://msdn.microsoft.com/en-us/library/bb514188(v=vs.110).aspx
+		-->
+		
+		<Recognized>
+			<!--
+				Note: Words are case-insensitive.
+			-->
+
+			<Word>Rxx</Word>
+			<Word>combinators</Word>
+
+			<Word>foo</Word>
+			<Word>bar</Word>
+			<Word>baz</Word>
+
+			<Word>RSS</Word>
+
+			<!--
+				Code Analysis incorrectly reports "ss" and "ff" as spelling errors in resource strings that format a TimeSpan.
+				For example: {0:mm\:ss\.ff}
+			-->
+			<Word>ss</Word>
+			<Word>ff</Word>
+
+			<Word>notifier</Word>
+
+		</Recognized>
+
+		<DiscreteExceptions>
+			
+			<Term>ShowTime</Term>
+			
+		</DiscreteExceptions>
+
+	</Words>
+</Dictionary>

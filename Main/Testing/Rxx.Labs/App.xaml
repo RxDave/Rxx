@@ -1,0 +1,15 @@
+﻿<Application x:Class="Rxx.Labs.App"
+						 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:local="clr-namespace:Rxx.Labs"
+						 xmlns:labs="clr-namespace:DaveSexton.Labs;assembly=DaveSexton.Labs">
+
+	<Application.Resources>
+
+		<local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+		<labs:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+
+	</Application.Resources>
+
+</Application>

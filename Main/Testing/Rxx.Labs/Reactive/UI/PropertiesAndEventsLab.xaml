@@ -1,0 +1,39 @@
+﻿<local:BaseLab x:Class="Rxx.Labs.Reactive.UI.PropertiesAndEventsLab"
+							 xmlns:local="clr-namespace:Rxx.Labs"
+							 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+							 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+							 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+							 mc:Ignorable="d" 
+							 d:DesignHeight="300" d:DesignWidth="300">
+	<Grid Name="LayoutRoot">
+		<Grid.Resources>
+			<Style x:Key="Text" TargetType="TextBlock">
+				<Setter Property="VerticalAlignment" Value="Center" />
+				<Setter Property="HorizontalAlignment" Value="Center" />
+				<Setter Property="TextWrapping" Value="Wrap" />
+				<Setter Property="Foreground" Value="Black" />
+			</Style>
+		</Grid.Resources>
+
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition MinHeight="125" />
+			<!-- MinHeight is necessary to ensure visibility on WP7 -->
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Name="EnterTarget" 
+						Background="LightYellow" BorderBrush="Yellow" BorderThickness="2">
+			<TextBlock Style="{StaticResource Text}">
+				Move the mouse in and out of this area.
+			</TextBlock>
+		</Border>
+
+		<Border Grid.Row="1" Name="ClickTarget"
+						Background="Azure" BorderBrush="Blue" BorderThickness="2">
+			<TextBlock Style="{StaticResource Text}">
+				Click anywhere in this area.
+			</TextBlock>
+		</Border>
+	</Grid>
+</local:BaseLab>

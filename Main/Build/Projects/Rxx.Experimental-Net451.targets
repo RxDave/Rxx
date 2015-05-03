@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!--
+	Many of the properties assigned here are defined by White Tie.
+	
+	https://whitetie.codeplex.com/wikipage?title=Configuration
+	-->
+
+	<PropertyGroup>
+		<BuildDocumentation Condition=" '$(BuildDocumentation)' == '' AND '$(Configuration)' == 'Release' ">True</BuildDocumentation>
+		<BuildDocumentationEnabled>$(BuildDocumentation)</BuildDocumentationEnabled>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<NuSpecTitle>Rxx Experimental</NuSpecTitle>
+		<NuSpecLicenseUrl>http://rxx.codeplex.com/license</NuSpecLicenseUrl>
+		<NuSpecProjectUrl>http://rxx.codeplex.com</NuSpecProjectUrl>
+		<NuSpecReleaseNotes>http://rxx.codeplex.com/releases</NuSpecReleaseNotes>
+		<NuSpecIconUrl>http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=rxx&amp;DownloadId=243622</NuSpecIconUrl>
+		<NuSpecTags>Rx Reactive Extensions Observable .NET LINQ Events</NuSpecTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<NuGetFlavor Include="..\Rxx.Experimental-Net40\Rxx.Experimental-Net40.csproj" />
+		<NuGetFlavor Include="..\Rxx.Experimental-Net403-SL5-Win8-WP8\Rxx.Experimental-Net403-SL5-Win8-WP8.csproj" />
+		<NuGetFlavor Include="..\Rxx.Experimental-Net451-Win81\Rxx.Experimental-Net451-Win81.csproj" />
+		<NuGetFlavor Include="..\Rxx.Experimental-Win81-WP81\Rxx.Experimental-Win81-WP81.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<DocumentationProjectSummary>Rxx Experimental Class Library for .NET 4.5.1</DocumentationProjectSummary>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CodeContractsLibPaths>$(CodeContractsLibPaths);$(ExternalReferencesDir)Microsoft\Rx Code Contracts\Net45</CodeContractsLibPaths>
+	</PropertyGroup>
+
+	<Target Name="BeforePrepareDeployment">
+
+		<ItemGroup>
+			<CodePlexZip Include="$(TargetDir)CodeContracts\*Contracts.dll" />
+			<CodePlexZip Include="$(TargetDir)$(TargetFilename)" />
+		</ItemGroup>
+
+	</Target>
+
+</Project>

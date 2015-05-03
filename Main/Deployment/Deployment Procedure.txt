@@ -1,0 +1,95 @@
+Rxx Deployment Procedure
+
+	Date				Author				Changes
+	5/4/2011		Dave S.				First draft
+	6/24/2011		Dave S.				Updates for Rxx 1.1 completed.
+	9/14/2012		Dave S.				Removed "Experimental" from folder paths.
+
+
+Targets:
+
+	CodePlex
+	http://rxx.codeplex.com/
+
+	NuGet
+	http://nuget.org/List/Packages/Rxx
+	You must request the API key from a project coordinator to deploy to this location.
+
+Procedure:
+
+	Building the solution in Release mode automatically creates deployment packages 
+	for CodePlex and NuGet, but it does not deploy them.  Follow these instructions
+	to build these packages and then verify and deploy them manually.
+
+	Release mode is not recommended for building inside Visual Studio.  Instead, double-click the 
+	solution's Build\RxxBuild.bat file to build the solution in a console window.
+
+	You will need the latest version of Sandcastle installed and patched to produce the 
+	documentation.  See the "Sandcastle Read Me.txt" file in the solution's Build\Documentation\
+	folder for details.
+
+
+	** Reminder **
+	Increment the minor version numbers in the AssemblyInfoShared.cs file and each of 
+	the projects' AssemblyInfo.cs files before building the deployment package.
+
+
+	1. Switch to Release mode in Visual Studio.
+	2. Build the entire solution.
+	3. Run all unit tests and expect "green" for all results.
+	4. Verify deployment packages.
+		 a. Unzip each package and verify that its contents are complete and correct.
+				I. To verify NuGet packages (.nupkg), add the .zip extension to the filename or use NuGet Package Explorer: 
+					 http://nuget.codeplex.com/releases/view/59864
+				II. To verify .chm files simply double-click them.
+
+				Deployment\Release\Stable\Rxx\{DateTime}\CodePlex\Rxx.chm
+				Deployment\Release\Stable\Rxx\{DateTime}\CodePlex\Rxx.zip
+				Deployment\Release\Stable\Rxx\{DateTime}\NuGet\Rxx.{Version}.nupkg
+				Deployment\Release\Stable\Rxx\{DateTime}\NuGet\Rxx.{Version}.symbols.nupkg
+				Deployment\Release\Stable\Rxx\{DateTime}\Symbols\Rxx.Symbols.zip
+
+				Deployment\Release\Stable\Rxx-Silverlight 5\{DateTime}\CodePlex\Rxx-Silverlight 5.chm
+				Deployment\Release\Stable\Rxx-Silverlight 5\{DateTime}\CodePlex\Rxx-Silverlight 5.zip
+				Deployment\Release\Stable\Rxx-Silverlight 5\{DateTime}\Symbols\Rxx-Silverlight 5.Symbols.zip
+
+				Deployment\Release\Stable\Rxx-Phone 7.1\{DateTime}\CodePlex\Rxx-Phone 7.1.chm
+				Deployment\Release\Stable\Rxx-Phone 7.1\{DateTime}\CodePlex\Rxx-Phone 7.1.zip
+				Deployment\Release\Stable\Rxx-Phone 7.1\{DateTime}\Symbols\Rxx-Phone 7.1.Symbols.zip
+				
+				Deployment\Release\Stable\Rxx.Labs\{DateTime}\CodePlex\Rxx.Labs.zip
+				Deployment\Release\Stable\Rxx.Labs\{DateTime}\Symbols\Rxx.Labs.Symbols.zip
+
+				Deployment\Release\Stable\Rxx.Labs-Silverlight 5\{DateTime}\CodePlex\Rxx.Labs-Silverlight 5.zip
+				Deployment\Release\Stable\Rxx.Labs-Silverlight 5\{DateTime}\Symbols\Rxx.Labs-Silverlight 5.Symbols.zip
+
+				Deployment\Release\Stable\Rxx.Labs-Phone 7.1\{DateTime}\CodePlex\Rxx.Labs-Phone 7.1.zip
+				Deployment\Release\Stable\Rxx.Labs-Phone 7.1\{DateTime}\Symbols\Rxx.Labs-Phone 7.1.Symbols.zip
+
+	5. Extract and run the console labs to verify stability.  (Smoke test)
+		 a. Extract all files from Rxx.Labs.zip and execute RxxLabs.exe.
+		 b. Manually run various labs and check their output.
+	6. Extract and run the Silverlight labs to verify stability.  (Smoke test)
+		 a. Extract all files from Rxx.Labs-Silverlight N.zip and then double-click the 
+				Rxx.Labs.SilverlightTestPage.html file to start the application.
+		 b. Manually run various labs and check their output.
+	7. Extract and run the Windows Phone labs to verify stability.  (Smoke test)
+		 a. Extract all files from Rxx.Labs-Phone 7.N.zip and then double-click Deploy.bat.
+		 b. If you have a registered device you may deploy to that device; otherwise, choose 
+				the Windows Phone 7 Emulator and click the Deploy button.
+		 c. Manually run various labs and check their output.
+	8. Ensure that the "Release Notes.txt" file in the Deployment folder is up-to-date.
+		 a. Add the latest release notes to the top of the Release Notes wiki on CodePlex.
+				http://rxx.codeplex.com/wikipage?title=Release%20Notes
+	9. Ensure that the "Features.txt" file in the Deployment folder is up-to-date.
+		 a. Add the latest features to the Features wiki on CodePlex.
+				http://rxx.codeplex.com/documentation
+	10. Check-in all pending changes.
+	11. Deploy all .zip and .chm files to CodePlex.
+			a. Associate the last check-in with the current release in CodePlex.
+	12. Run the NuGetPush.bat script to deploy the NuGet package.
+		  a. You can simply double-click this .bat file in Windows Explorer.
+			b. It’s located in the same folder as the NuGet package file.
+	13. Browse the existing documentation on CodePlex and update as necessary.
+
+...and don't forget to let people know about the deployment!
