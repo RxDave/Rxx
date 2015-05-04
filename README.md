@@ -8,4 +8,4 @@ Rxx is a library of unofficial reactive LINQ extensions and types supplementary 
 1. Community feedback and contributions will help guide the evolution of Rxx.
 
 # Getting Started
-* See our [Wiki](../../wiki).
+See our [Wiki](../../wiki).
